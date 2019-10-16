@@ -25,4 +25,12 @@ public class CartServiceTest {
         System.out.println(JSON.toJSONString(result,true));
 
     }
+
+    @Test
+    public void filterSkus() {
+        List<Sku> cartSkuList = CartService.getCartSkuList();
+        List<Sku> result = CartService.filterSkus(cartSkuList, null,2000.00,false);
+        //第二个参数是是否标记
+        System.out.println(JSON.toJSONString(result,true));
+    }
 }
