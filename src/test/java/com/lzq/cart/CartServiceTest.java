@@ -33,4 +33,11 @@ public class CartServiceTest {
         //第二个参数是是否标记
         System.out.println(JSON.toJSONString(result,true));
     }
+
+    @Test
+    public void filterSkus1() {
+        List<Sku> cartSkuList = CartService.getCartSkuList();
+        List<Sku> result = CartService.filterSkus(cartSkuList, new SkuTotalPricePredicate());
+        System.out.println(JSON.toJSONString(result,true));
+    }
 }

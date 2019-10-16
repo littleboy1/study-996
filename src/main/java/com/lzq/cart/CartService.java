@@ -126,4 +126,22 @@ public class CartService {
         }
         return result;
     }
+
+    /**
+     * Version 4.0.0
+     * 根据不同的Sku判断标准，对Sku列表进行过滤
+     * @param cartSkuList
+     * @param predicate - 不同的Sku判断标准策略----策略模式的一种方式
+     * @return
+     */
+    public static List<Sku> filterSkus(
+            List<Sku> cartSkuList, SkuPredicate predicate) {
+        List<Sku> result = new ArrayList<Sku> ();
+        for (Sku sku : cartSkuList) {
+            if (predicate.test(sku)){
+                result.add(sku);
+            }
+        }
+        return result;
+    }
 }
