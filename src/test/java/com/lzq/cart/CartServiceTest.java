@@ -53,4 +53,11 @@ public class CartServiceTest {
         System.out.println(JSON.toJSONString(result,true));
     }
 
+    @Test
+    public void useLambdaReplaceTheImplementationClass() {
+        List<Sku> cartSkuList = CartService.getCartSkuList();
+        List<Sku> result = CartService.filterSkus(cartSkuList, sku -> sku.getTotalPrice() > 1000);
+        System.out.println(JSON.toJSONString(result,true));
+    }
+
 }
