@@ -1,15 +1,13 @@
-package com.lzq.card;
-
-import com.google.common.collect.Lists;
+package com.lzq.cart;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
+//在Windows上一键创建测试类control +shift +t
 public class CartService {
     //使用匿名内部类完成初始化。外层{}定义了一个ArrayList的匿名捏不累，内存的{}定义了一个实力初始化模块，存在内存泄漏风险
+    /**
+     * 这是一个购物车列表
+     */
     private static List<Sku> cartSkuList = new ArrayList<Sku>(){
         {
             add(new Sku(654032, "无人机",
@@ -50,11 +48,32 @@ public class CartService {
 
         }
     };
-    //使用第二种方式初始化
-    List<Integer> list = Arrays.asList(1,2,3);
-    //第三种
-    List<Integer> list2 = Stream.of(1,2,3).collect(Collectors.toList());
-    //第四种
-    List<Integer> list3 = Lists.newArrayList(1,2,3); //以前不知道这里可以直接传入参数
 
+    public static List<Sku> getCartSkuList(){
+        return cartSkuList;
+    }
+//    //使用第二种方式初始化
+//    List<Integer> list = Arrays.asList(1,2,3);
+//    //第三种
+//    List<Integer> list2 = Stream.of(1,2,3).collect(Collectors.toList());
+//    //第四种
+//    List<Integer> list3 = Lists.newArrayList(1,2,3); //以前不知道这里可以直接传入参数
+
+    /**
+     *
+     * @param cartSkuList 找出购物车中所有的电子产品
+     * @return
+     */
+    public static List<Sku> filterElectionsSkus(List<Sku> cartSkuList){
+
+        List<Sku> result = new ArrayList<> ();
+
+        for (Sku sku : cartSkuList) {
+
+            if (SkuCategoryEnum.ELECTRONICS.equals(sku.getSkuCategory())){
+                result.add(sku);
+            }
+        }
+        return result;
+    }
 }

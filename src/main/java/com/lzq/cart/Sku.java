@@ -1,4 +1,4 @@
-package com.lzq.card;
+package com.lzq.cart;
 
 public class Sku {
     //编号
@@ -12,7 +12,7 @@ public class Sku {
     //总价
     private Double totalPrice;
     //商品类型
-    private String skuCategory;
+    private SkuCategoryEnum skuCategory;
 
     public Sku(Integer skuId, String skuName, Double skuPrice, Integer skuTotal, Double totalPrice, SkuCategoryEnum skuCategory) {
         this.skuId = skuId;
@@ -63,11 +63,11 @@ public class Sku {
         this.totalPrice = totalPrice;
     }
 
-    public String getSkuCategory() {
+    public SkuCategoryEnum getSkuCategory() {
         return skuCategory;
     }
 
-    public void setSkuCategory(String skuCategory) {
+    public void setSkuCategory(SkuCategoryEnum skuCategory) {
         this.skuCategory = skuCategory;
     }
 }

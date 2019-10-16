@@ -1,4 +1,4 @@
-package com.lzq.card;
+package com.lzq.cart;
 
 /**
  * 商品类型枚举
