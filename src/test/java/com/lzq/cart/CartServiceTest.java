@@ -16,4 +16,13 @@ public class CartServiceTest {
         //第二个参数是是否标记
         System.out.println(JSON.toJSONString(result,true));
     }
+
+    @Test
+    public void filterSkusByCategory() {
+        List<Sku> cartSkuList = CartService.getCartSkuList();
+        List<Sku> result = CartService.filterSkusByCategory(cartSkuList,SkuCategoryEnum.BOOKS);
+        //第二个参数是是否标记
+        System.out.println(JSON.toJSONString(result,true));
+
+    }
 }
