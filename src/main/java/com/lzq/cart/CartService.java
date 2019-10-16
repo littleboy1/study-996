@@ -131,7 +131,7 @@ public class CartService {
      * Version 4.0.0
      * 根据不同的Sku判断标准，对Sku列表进行过滤
      * @param cartSkuList
-     * @param predicate - 不同的Sku判断标准策略----策略模式的一种方式
+     * @param predicate - 不同的Sku判断标准策略----策略模式的一种方式，将行为作为一种参数进行传递
      * @return
      */
     public static List<Sku> filterSkus(
