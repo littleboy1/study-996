@@ -53,6 +53,27 @@ public class CartServiceTest {
         System.out.println(JSON.toJSONString(result,true));
     }
         //lambda可以理解为一种匿名函数的代替，将行为参数化传递
+
+    /**2-11
+     * lambda的几中形式
+     * 1.没有参数的方法()->
+     * 2.只有一个参数name->
+     * 3.没有参数逻辑复杂
+     * ()->{
+     * ......
+     * ......
+     * 如果有返回值需要显示的返回
+     * }
+     * 4.包含多个参数的方法(x,y) ->...
+     * 5.显示声明参数的形式(long x,long y)->
+     *2-12
+     *
+     * 函数式接口：只有一个抽象方法
+     * 函数式接口的注解：@functionInterface
+     * 函数式接口的抽象方法签名：函数描述符
+     *
+     *
+     */
     @Test
     public void useLambdaReplaceTheImplementationClass() {
         List<Sku> cartSkuList = CartService.getCartSkuList();
