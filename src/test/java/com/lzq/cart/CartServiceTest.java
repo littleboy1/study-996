@@ -52,7 +52,7 @@ public class CartServiceTest {
         });
         System.out.println(JSON.toJSONString(result,true));
     }
-
+        //lambda可以理解为一种匿名函数的代替，将行为参数化传递
     @Test
     public void useLambdaReplaceTheImplementationClass() {
         List<Sku> cartSkuList = CartService.getCartSkuList();
