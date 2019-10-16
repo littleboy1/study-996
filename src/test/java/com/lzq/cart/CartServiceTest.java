@@ -40,4 +40,17 @@ public class CartServiceTest {
         List<Sku> result = CartService.filterSkus(cartSkuList, new SkuTotalPricePredicate());
         System.out.println(JSON.toJSONString(result,true));
     }
+
+    @Test
+    public void useAnonymousClassReplaceTheImplementationClass() {
+        List<Sku> cartSkuList = CartService.getCartSkuList();
+        List<Sku> result = CartService.filterSkus(cartSkuList, new SkuPredicate() {
+            @Override
+            public boolean test(Sku sku) {
+                return sku.getTotalPrice() >1000;
+            }
+        });
+        System.out.println(JSON.toJSONString(result,true));
+    }
+
 }
