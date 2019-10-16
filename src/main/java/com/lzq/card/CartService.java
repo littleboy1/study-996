@@ -1,10 +1,15 @@
 package com.lzq.card;
 
+import com.google.common.collect.Lists;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CartService {
-
+    //使用匿名内部类完成初始化。外层{}定义了一个ArrayList的匿名捏不累，内存的{}定义了一个实力初始化模块，存在内存泄漏风险
     private static List<Sku> cartSkuList = new ArrayList<Sku>(){
         {
             add(new Sku(654032, "无人机",
@@ -45,4 +50,11 @@ public class CartService {
 
         }
     };
+    //使用第二种方式初始化
+    List<Integer> list = Arrays.asList(1,2,3);
+    //第三种
+    List<Integer> list2 = Stream.of(1,2,3).collect(Collectors.toList());
+    //第四种
+    List<Integer> list3 = Lists.newArrayList(1,2,3); //以前不知道这里可以直接传入参数
+
 }
